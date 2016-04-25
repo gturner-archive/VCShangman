@@ -4,8 +4,11 @@
 	
 	<body>
 		<form>
-			<input type='text' name='guess' />
+			<input type='text' name='guess' autofocus />
 			<input type='submit' value='Guess!' />
+		</form>
+		<form action="/" method="get">
+			<input type='submit' value='Reset' />
 		</form>
 		<p>
 			<%= word_blanks %>
