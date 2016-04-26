@@ -1,23 +1,38 @@
 <html>
 	<head>
+		<style>
+			body {text-align: center;}
+			h1 {margin: 20px 0;}
+			.wordBlank {letter-spacing: 5px;}
+			.error{color: red;}
+		</style>
 	</head>
 	
 	<body>
+		<h1>
+			Hangman: Will You Survive?
+		</h1>
 		<form>
 			<input type='text' name='guess' autofocus />
 			<input type='submit' value='Guess!' />
 		</form>
+		<p class="error">
+			<%= game_error %> 
+		</p>
+		<p>Enter any character from a-z above. Try to guess the random word! Press Reset to receive a new word.</p>
+		<p class="wordBlank">
+			<%= word_blanks %>
+		</p>
+		<p>You've got five chances, better make them count!</p>
+		<p>
+			Incorrect guesses: <span class="error"><%= incorrect %></span>
+		</p>
+		<p>
+			<%= message %> 
+		</p>
+	
 		<form action="/" method="get">
 			<input type='submit' value='Reset' />
 		</form>
-		<p>
-			<%= word_blanks %>
-		</p>
-		<p>
-			<%= word_to_guess %>
-		</p>
-		<p>
-			<%= incorrect %> <%= message %> 
-		</p>
 	</body>
 </html>

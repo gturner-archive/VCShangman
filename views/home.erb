@@ -1,4 +1,30 @@
-<form action="/game" method="post">
-  <input type="text" name="difficulty">
-  <input type="submit" value="Set your difficulty">
-</form>
+
+<html>
+	<head>
+		<style>
+			body {text-align: center;}
+			.diffInput, .diffSubmit {margin-top: 5px; margin-bottom: 5px;}
+			.containter {height: 200px; width: 90%;}
+			.description {width: 300px; margin: 0 auto;}
+			h1 {margin-top: 30px;}
+			.error {color: red;}
+		</style>
+	</head>
+	<body>
+		<h1>
+			Welome to Hangman
+		</h1>
+		<form action="/game" method="post">
+		  <input class="diffInput" type="text" name="difficulty">
+		  <input class="diffSubmit" type="submit" value="Set your difficulty">
+		</form>
+		<div class="container">
+			<p class="description">
+				In the box above, enter an integer between 1 and 28. This will determine how long your word is.
+			</p>
+			<p class="error">
+				<%= home_error %>
+			</p>
+		</div>
+	</body>
+</html>
